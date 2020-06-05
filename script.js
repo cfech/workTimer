@@ -206,7 +206,7 @@ console.log("changeMode -> setting", setting)
 
   console.log("changing")
 
-  if(setting){
+  if(!setting){
     document.body.classList.add("dark")
     document.body.classList.remove("light")
   }else{
