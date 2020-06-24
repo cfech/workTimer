@@ -13,6 +13,9 @@
   background-color: darkgray;
   font-family: "Josefin Sans", sans-serif;
 }
+.d{
+  background-color: darkgray !important;
+}
 .light{
   background-color: white;
   font-family: "Josefin Sans", sans-serif;
@@ -46,6 +49,25 @@
   border-radius: 50%;
 }
 
+/* .modeD:before {
+  position: absolute;
+  content: " ";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color:darkgray;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+} */
+
+
+
+
+
+
+
 input:checked + .mode:before {
   transform: translateX(13px);
 }
@@ -53,16 +75,6 @@ input:checked + .mode:before {
 input:checked + .mode {
   background-color: black;
 }
-
-/* input:focus + .mode {
-  box-shadow: 0 0 1px red;
-} */
-
-/* body {
-  font-size: 14px;
-  background-color: darkgray;
-  font-family: "Josefin Sans", sans-serif;
-} */
 
 header {
   text-align: center;
@@ -168,6 +180,7 @@ input:checked + .slider:before {
   background-color: #fdfdfd;
   border-radius: 50%;
 }
+
 
 #hand {
   position: absolute;

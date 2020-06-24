@@ -41,14 +41,9 @@ function setTime() {
     minutes = restMinutesInput.value
   }
 
-
-
   clearInterval(interval);
 
   totalSeconds = minutes * 60;
-  console.log("setTime -> totalSeconds", totalSeconds)
-
-  console.log(minutes)
 }
 
 
@@ -79,8 +74,6 @@ function getFormattedMinutes() {
 
 // seconds left 
   var secondsLeft = totalSeconds - secondsElapsed;
-  console.log("getFormattedMinutes -> secondsElapsed", secondsElapsed)
-  console.log("getFormattedMinutes -> secondsLeft", secondsLeft)
 
   // minutes left 
   var minutesLeft = Math.floor(secondsLeft / 60);
@@ -117,7 +110,6 @@ function getFormattedSeconds() {
 
 // function to stop the timer 
 function stopTimer() {
-  console.log("timer stopped")
 
   secondsElapsed = 0
 
@@ -134,10 +126,8 @@ function pauseTimer() {
 
 // function for registering toggle status
 function toggleStatus(event) {
-  console.log(event)
 
   let checked = event.target.checked
-  console.log("toggleStatus -> checked", checked)
 
   if (checked) {
     status = "working"
@@ -166,11 +156,9 @@ function setTimeLocal() {
 
 function getLocalTime() {
   var localTime = JSON.parse(localStorage.getItem("preferences"))
-  console.log("getLocalTime -> localTime", localTime)
 
   if (localTime) {
     if (localTime.workMinutes) {
-      console.log("setting value ")
       workMinutesInput.value = localTime.workMinutes
     }
 
@@ -201,17 +189,23 @@ modeToggle.addEventListener("change", changeMode)
 function changeMode(event){
 
 var setting = event.target.checked
-console.log(event.target)
-console.log("changeMode -> setting", setting)
 
-  console.log("changing")
+var cont = document.getElementById("containerDark")
+
 
   if(!setting){
     document.body.classList.add("dark")
     document.body.classList.remove("light")
+    cont.classList.add("d")
+    workMinutesInput.classList.add("d")
+    restMinutesInput.classList.add("d")
   }else{
     document.body.classList.add("light")
     document.body.classList.remove("dark")
+    workMinutesInput.classList.remove("d")
+    restMinutesInput.classList.remove("d")
+    cont.classList.remove("d")
   }
 
 }
+
