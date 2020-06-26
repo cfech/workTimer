@@ -1,6 +1,7 @@
-/* html{
-  background-color: darkgray;
-} */
+:root{
+  --lightBGColor: white;
+  --darkBGColor:darkgray;
+}
 
 *,
 *::before,
@@ -10,17 +11,20 @@
 
 .dark{
   font-size: 14px;
-  background-color: darkgray;
+  background-color: var(--darkBGColor);
   font-family: "Josefin Sans", sans-serif;
+  transition: background-color 500ms;
 }
 .d{
-  background-color: darkgray !important;
+  background-color: var(--darkBGColor) !important;
+  transition: background-color 500ms;
 }
 .light{
   background-color: white;
   font-family: "Josefin Sans", sans-serif;
   font-size: 14px;
   color: green !important;
+  transition: background-color 1000ms;
 }
 
 .mode{
